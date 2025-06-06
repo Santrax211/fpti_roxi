@@ -1,0 +1,68 @@
+/* src/styles/Footer.css */
+
+.site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 1rem;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.footer-col {
+  flex: 1 1 200px;
+}
+.footer-col h4 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col a {
+  display: block;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+.footer-col a:hover {
+  color: var(--color-accent);
+}
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.footer-social-link {
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+.footer-social-link:hover {
+  color: var(--color-accent);
+}
+.footer-right {
+  text-align: right;
+}
+.footer-right p {
+  font-family: var(--font-base);
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+.footer-right small {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+@media (max-width: 640px) {
+  .footer-right {
+    text-align: left;
+  }
+}

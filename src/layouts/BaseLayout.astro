@@ -1,35 +1,65 @@
 ---
-import BaseHead from '@/components/BaseHead'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import ProviderTheme from '@/components/ProviderTheme'
-import ProviderAnimations from '@/components/ProviderAnimations'
-import TwSizeIndicator from '@/components/TwSizeIndicator'
-import EditBlog from '@/components/editBlog'
-const { title, description, image, articleDate } = Astro.props
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ProviderTheme from '@/components/ProviderTheme.astro'
+import ProviderAnimations from '@/components/ProviderAnimations.astro'
+import TwSizeIndicator from '@/components/TwSizeIndicator.astro'
+import EditBlog from '@/components/editBlog.astro'
+
+interface Props {
+	title?: string
+	description?: string
+	image?: string
+	articleDate?: string
+}
+
+const { title, description, image, articleDate } = Astro.props as Props
+
+// Importamos todos los CSS globales y de Layout
+import '../styles/variables.css'
+import '../styles/global.css'
+import '../styles/typography.css'
+import '../styles/utilities.css'
+import '../styles/BaseLayout.css'
 ---
 
-<html lang='en' class='scroll-smooth'>
+<!doctype html>
+<html lang='es' class='scroll-smooth'>
 	<head>
-		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<BaseHead
+			title={title ?? 'MiBlog'}
+			description={description}
+			ogImage={image}
+			articleDate={articleDate}
+		/>
 		<ProviderTheme />
 		<ProviderAnimations />
 	</head>
 
-	<body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white'>
-		<main
-			class='px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible'
-		>
+	<body class='layout-body'>
+		<div class='layout'>
+			<!-- Header visible -->
 			<Header />
-			<slot />
+
+			<!-- Contenedor principal (slot) -->
+			<main class='main-container'>
+				<slot />
+			</main>
+
+			<!-- Footer -->
 			<Footer />
-		</main>
-		<TwSizeIndicator />
-		<EditBlog />
-		<style>
-			body {
-				margin-left: calc(100vw - 100%); /* prevent layout shift */
-			}
-		</style>
+
+			<!-- Utilidades externas -->
+			<TwSizeIndicator />
+			<EditBlog />
+		</div>
+
+		<script>
+			// Prevenir shift al cambiar el scrollbar
+			document.body.style.marginLeft = `calc(100vw - 100%)`
+		</script>
 	</body>
 </html>

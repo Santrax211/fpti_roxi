@@ -1,0 +1,33 @@
+/* src/styles/BaseLayout.css */
+
+/* 1. Layout general: flex column para empujar footer abajo */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 2. Cuerpo (body) con background y color de texto en light/dark */
+.layout-body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Main container: espacio central con padding y ancho máximo */
+.main-container {
+  flex: 1;
+  padding: 1rem; /* equivalente a p-4 */
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* 4. Enlaces heredan variables de color */
+a {
+  color: var(--color-accent);
+}
+a:hover {
+  color: var(--color-accent-hover);
+}

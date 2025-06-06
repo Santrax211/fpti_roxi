@@ -1,65 +1,46 @@
 ---
 import { Image } from 'astro:assets'
-import FormattedDate from '@/components/FormattedDate'
-import ArrowUp from '@/components/icons/ArrowUp'
+import FormattedDate from '@/components/FormattedDate.astro'
+import ArrowUp from '@/components/icons/ArrowUp.astro'
 
-const {
-	id,
-	data: { title, description, pubDate, heroImage, category },
-	readTime,
-	slug
-} = Astro.props
+// De nuevo: simplificamos el destructuring para que TS no se queje de props faltantes
+const { id, data, readTime, slug } = Astro.props
+const { title, description, pubDate, heroImage, category } = data
 ---
 
-<article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group'>
-	<a class='relative overflow-hidden' href={`/post/${slug}/`}>
+<link rel='stylesheet' href='/src/styles/PostCard.css' />
+
+<article class='card-post group'>
+	<a class='card-image-wrapper' href={`/post/${slug}/`}>
 		<Image
 			src={heroImage}
 			width={600}
 			height={200}
 			format='webp'
-			class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-[2px]'
-			alt={`img of ${title}`}
+			class='card-image'
+			alt={`Imagen de ${title}`}
 		/>
-
-		<div class='z-30 absolute bottom-0 w-full h-20'>
-			<div class='-z-10 absolute bottom-0 glass w-full min-h-full'></div>
-			<div class='flex items-center justify-between gap-x-1 text-white px-6 py-4'>
-				<div class='flex flex-col gap-1 items-center justify-center'>
-					<FormattedDate date={pubDate} />
-					<span class='text-sm'> {readTime}</span>
+		<div class='card-overlay'>
+			<div class='card-overlay-background'></div>
+			<div class='card-overlay-content'>
+				<div class='flex flex-col items-center justify-center'>
+					<FormattedDate date={new Date(pubDate)} />
+					<span class='text-sm text-gray-200'>{readTime} min</span>
 				</div>
-
-				<span class='pb-4'>{category}</span>
+				<span class='text-sm text-yellow-300 font-medium'>{category}</span>
 			</div>
 		</div>
 	</a>
 
-	<div class='flex justify-between flex-col gap-4 md:gap-0 py-6 pl-1'>
-		<div class='flex flex-col gap-3'>
-			<div class='flex flex-col gap-2'>
-				<a class='text-2xl font-semibold -tracking-wider' href={`/post/${slug}/`}>
-					{title}
-				</a>
-			</div>
-
-			<p
-				class='overflow-hidden line-clamp-3 text-gray-700 dark:text-white mb-5 font-[400] md:pr-[15%]'
-			>
-				{description}
-			</p>
-		</div>
-
-		<footer class='flex justify-between items-center'>
-			<a
-				href={`/post/${slug}/`}
-				class='flex justify-center items-center dark:text-white rounded-full hover:translate-x-1 transition-transform duration-150 ease-in-out font-semibold gap-1 group'
-				aria-label={`go to ${title}`}
-			>
-				Read Post <span
-					class='mt-[1px] group-hover:rotate-45 transition-transform duration-250 ease-in-out'
-					><ArrowUp width='18' height='18' /></span
-				>
+	<div class='card-body'>
+		<a class='card-title' href={`/post/${slug}/`}>{title}</a>
+		<p class='card-excerpt'>{description}</p>
+		<footer class='card-footer'>
+			<a href={`/post/${slug}/`} class='read-post-link' aria-label={`Leer ${title}`}>
+				Read Post
+				<span class='read-icon'>
+					<ArrowUp width='18' height='18' />
+				</span>
 			</a>
 		</footer>
 	</div>
@@ -68,9 +49,8 @@ const {
 <script>
 	import { animate } from 'motion'
 
-	const images = document.querySelectorAll('img')
-
-	document.addEventListener('DOMContentLoaded', function () {
+	document.addEventListener('DOMContentLoaded', () => {
+		const images = document.querySelectorAll('img')
 		const showAnimations = localStorage.getItem('animations') === 'true'
 
 		if (showAnimations) {

@@ -1,40 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 🔗 Importamos las variables antes que todo */
+@import './variables.css';
 
-@layer base {
-	/* body {
-		transition: background-color 0.5s ease;
-	} */
-
-	.prose code {
-		@apply text-base;
-	}
-
-	/* prose styles here */
-	.prose h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply text-zinc-800 dark:text-zinc-100   !important;
-	}
-
-	html.dark .shiki,
-	html.dark .shiki span {
-	  color: var(--shiki-dark) !important;
-	  background-color: theme(colors.gray.900) !important;
-	}
+/* Estilos globales */
+html {
+  scroll-behavior: smooth;
 }
 
-.glass {
-	background: rgba(57, 56, 56, 0.52);
-	backdrop-filter: blur(13px) saturate(150%);
-	-webkit-backdrop-filter: blur(13px) saturate(150%);
-	z-index: -1;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
 }
 
-.shadow {
-	box-shadow: -5px 3px 8px 1px rgba(0, 0, 0, 0.12);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+p, li {
+  font-family: var(--font-base);
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Grid de posts responsivo */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Utilidades (ejemplo de fragmento) */
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.p-4  { padding: 1rem; }
+
+/* Pie de paginación */
+.pagination-footer {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.pagination-list {
+  list-style: none;
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.page-item a {
+  display: block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.page-item.active a {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
 }

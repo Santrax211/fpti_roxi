@@ -1,10 +1,69 @@
 ---
+import type { SocialNetwork } from '@/site-config'
 import { siteConfig } from '@/site-config'
 
+// Importamos los componentes .astro de los iconos
+import TwitterIcon from '@/components/icons/TwitterIcon.astro'
+import GithubIcon from '@/components/icons/GithubIcon.astro'
+// Si tienes más iconos, agrégalos aquí
+
+// Mapa para resolver iconName → componente .astro
+const iconMap: Record<string, any> = {
+	TwitterIcon,
+	GithubIcon
+	// Añade más iconos si los agregas a site-config.ts
+}
+
+const { socials } = siteConfig as { socials: SocialNetwork[] }
 const today = new Date()
 ---
 
-<footer class='flex justify-center items-center w-full px-16 h-28 border-t-2'>
-	&copy; {today.getFullYear()}
-	{siteConfig.author}. All rights reserved.
+<link rel='stylesheet' href='/src/styles/Footer.css' />
+
+<footer class='site-footer'>
+	<div class='footer-content'>
+		<!-- Columna de Enlaces Rápidos -->
+		<div class='footer-col'>
+			<h4>Enlaces</h4>
+			<ul>
+				<li><a href='/'>Inicio</a></li>
+				<li><a href='/about'>Acerca</a></li>
+				<li><a href='/tags'>Tags</a></li>
+				<li><a href='/contact'>Contacto</a></li>
+			</ul>
+		</div>
+
+		<!-- Columna de Redes Sociales -->
+		<div class='footer-col'>
+			<h4>Sígueme</h4>
+			<div class='footer-socials'>
+				{
+					socials.map((network: SocialNetwork) => {
+						const IconComponent = iconMap[network.iconName]
+						if (!IconComponent) {
+							return null
+						}
+						return (
+							<a
+								href={network.url}
+								target='_blank'
+								rel='noopener'
+								aria-label={network.name}
+								class='footer-social-link'
+							>
+								{/* Aquí renderizamos el componente .astro equivalente */}
+								<IconComponent width='20' height='20' />
+							</a>
+						)
+					})
+				}
+			</div>
+		</div>
+
+		<!-- Columna de Derechos Reservados -->
+		<div class='footer-col footer-right'>
+			<p>&copy; {today.getFullYear()} {siteConfig.author}. All rights reserved.</p>
+			<small class='text-gray-500'>Versión 1.0.0</small>
+		</div>
+	</div>
 </footer>
