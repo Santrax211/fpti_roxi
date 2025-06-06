@@ -1,72 +1,22 @@
 ---
-import ListCategories from '@/components/ListCategories.astro'
-import ListPosts from '@/components/ListPosts.astro'
-import TitlePage from '@/components/TitlePage.astro'
-import BaseLayout from '@/layouts/BaseLayout.astro'
+import ListCategories from '@/components/ListCategories'
+import ListPosts from '@/components/ListPosts'
+import TitlePage from '@/components/TitlePage'
+import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
 import { siteConfig } from '@/site-config'
 
-// Importamos el CSS que corregimos en el paso anterior
-import '../styles/index.css'
-
-const MAX_POSTS = 5
+const MAX_POSTS = 5 // max number of posts to show on the home page
 const posts = await getPosts(MAX_POSTS)
 ---
 
 <BaseLayout title='Home'>
-	<div class='container mx-auto px-4 sm:px-6 lg:px-8'>
-		<!-- Ahora TitlePage acepta `class="mb-6"` sin error -->
-		<TitlePage title={siteConfig.title} class='mb-6' />
+	<TitlePage title={siteConfig.title} />
+	<ListCategories />
 
-		<div class='mb-8'>
-			<ListCategories />
-		</div>
-
-		<section class='mb-12'>
-			<div class='flex justify-between items-center mb-4'>
-				<h2 class='text-2xl font-semibold tracking-wide text-gray-100'>Últimas publicaciones</h2>
-				<a href='/page/1' class='text-sm text-blue-400 hover:text-blue-500'> Ver todas →</a>
-			</div>
-
-			<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6'>
-				<ListPosts FirstBig={true} posts={posts} />
-			</div>
-		</section>
-
-		<footer class='flex justify-center items-center py-6 border-t border-gray-700'>
-			<nav aria-label='Paginación de posts'>
-				<ul class='inline-flex -space-x-px text-sm'>
-					<li>
-						<span
-							class='px-3 py-2 ml-0 leading-tight text-gray-500 bg-gray-800 border border-gray-700 rounded-l-lg cursor-not-allowed'
-						>
-							← Anterior
-						</span>
-					</li>
-					<li>
-						<a
-							href='/'
-							class='px-3 py-2 leading-tight text-blue-400 bg-gray-900 border border-gray-700 hover:bg-gray-800 hover:text-white'
-							aria-current='page'>1</a
-						>
-					</li>
-					<li>
-						<a
-							href='/page/2'
-							class='px-3 py-2 leading-tight text-gray-300 bg-gray-800 border border-gray-700 hover:bg-gray-700 hover:text-white'
-							>2</a
-						>
-					</li>
-					<li>
-						<a
-							href='/page/2'
-							class='px-3 py-2 leading-tight text-gray-300 bg-gray-800 border border-gray-700 rounded-r-lg hover:bg-gray-700 hover:text-white'
-							>Siguiente →</a
-						>
-					</li>
-				</ul>
-			</nav>
-		</footer>
+	<div>
+		<h2 class='text-lg font-medium tracking-wide text-end'>Últimas publicaciones</h2>
+		<ListPosts FirstBig={true} posts={posts} />
 	</div>
 </BaseLayout>
 
@@ -81,6 +31,7 @@ const posts = await getPosts(MAX_POSTS)
 			{
 				duration: 2.5,
 				opacity: { duration: 3 },
+
 				offset: [0, 0.55, 0.75]
 			}
 		)

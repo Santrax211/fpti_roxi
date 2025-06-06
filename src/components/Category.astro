@@ -1,28 +1,22 @@
 ---
-import { cn } from '@/utils/cn' /* <-- ruta corregida */
-import { sluglify } from '@/utils/sluglify'
+import { cn, sluglify } from '@/utils'
 
-interface Props {
-	name?: string
-	activeCategory?: string
-}
-
-const { name = 'Ver todo', activeCategory } = Astro.props as Props
+const { name = 'Ver todo', activeCategory } = Astro.props
 const currentPath = Astro.url.pathname
-const slugified = sluglify(name.toLowerCase())
+const unsluglifyNameCategory = sluglify(name.toLowerCase())
 
 const isActive =
-	activeCategory?.toLowerCase() === slugified || (currentPath === '/' && name === 'Ver todo')
-
-const href = name === 'Ver todo' ? '/' : `/category/${slugified}/1`
+	activeCategory?.toLocaleLowerCase() === unsluglifyNameCategory ||
+	(currentPath === '/' && name === 'Ver todo')
 ---
 
-<link rel='stylesheet' href='/src/styles/Category.css' />
-
 <a
-	href={href}
-	class={cn(`category-chip`, isActive && `category-chip--active`)}
-	aria-current={isActive ? 'page' : undefined}
+	href={name === 'Ver todo' ? '/' : sluglify(`/category/${unsluglifyNameCategory}/1`)}
+	class={cn(
+		`text-gray-600 dark:text-gray-300  pb-2.5 first-letter:uppercase font-medium hover:text-gray-800 border-b-2 border-opacity-0 dark:border-opacity-0 border-black dark:border-white dark:hover:border-white hover:border-opacity-100 transition-colors duration-150 ease-linear  `,
+		isActive &&
+			`border-black border-b-2 text-black z-10  dark:border-white dark:text-white dark:border-opacity-100 border-opacity-100`
+	)}
 >
 	{name}
 </a>

@@ -1,23 +1,14 @@
 ---
-// src/components/TitlePage.astro
-
-// 1) Importaciones deben terminar en punto y coma
 import Title from './Title.astro'
 import Shape from './icons/Shape.astro'
-
-// 2) Definimos una interfaz Props que incluya `title` y opcionalmente `class`
-interface Props {
+type Props = {
 	title: string
-	class?: string
 }
 
-// 3) Extraemos las props desde Astro.props y las casteamos como Props.
-//    Renombramos `class` a `className` para evitar choque con palabra reservada.
-const { title, class: className = '' } = Astro.props as Props
+const { title } = Astro.props
 ---
 
-<!-- 4) Concatenamos `className` (si nos lo pasan) con el resto de clases -->
-<div class={`${className} flex justify-start items-center gap-2 title`}>
+<div class='flex justify-start items-center gap-2 title'>
 	<Shape />
 	<Title>{title}</Title>
 </div>
