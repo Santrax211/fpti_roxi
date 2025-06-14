@@ -94,137 +94,336 @@ tags: ['Salida']
        🔹 ¿Cómo Definir el Alcance?
             1. Partimos del objetivo general del proyecto
 
-                Establecer una infraestructura de red segura y un sistema de almacenamiento centralizado que elimine el uso de medios físicos (USB) y minimice los riesgos de pérdida o acceso no autorizado a la información crítica de la empresa.
-
+                Reducir el riesgo de pérdida de información y vulnerabilidad de la red interna en la oficina principal de F & R Corp S.A.C., a través de la implementación de una red LAN segura, la instalación de un servidor NAS con respaldo automático, y la capacitación técnica al personal de la empresa.
             2. Identificamos tres grandes componentes clave para lograr el objetivo, basándonos en el árbol de objetivos:
 
-                - Componente 1: Implementar red LAN segmentada con control de accesos.
+                - Componente 1: Instalación de red LAN segura y segmentada
 
-                - Componente 2: Instalar y configurar servidor NAS con políticas de respaldo automático.
+                - Componente 2: Implementación de servidor NAS con respaldo automático
 
-                - Componente 3: Capacitar al personal administrativo y técnico en uso y mantenimiento del sistema.
+                - Componente 3: Capacitación en seguridad y gestión digital al personal
 
             3. A partir de estos componentes se listan acciones específicas como futuros entregables, clasificados como:
 
                 - Acciones excluyentes:
 
-                  Instalación del servidor NAS o uso de almacenamiento en la nube (solo se ejecuta una, en este caso, NAS).
+                  Ej: Instalación de servidor NAS, auditorías manuales periódicas, implementar escaneo de red automatizado
 
                 - Acciones complementarias:
 
-                  Configuración de VLANs, políticas de respaldo, manuales de usuario, capacitación técnica.
+                  Ej: Segmentación VLAN, backups automáticos, auditorías, cultura digital
 
        🔹 ¿Cómo Crear la EDT?
             1. Se establece el primer nivel (1):
 
-                Implementación de red segura y servidor NAS para F & R Corp S.A.C.
+                Implementación de red LAN segura y servidor NAS con respaldo automático para la oficina central de F & R Corp S.A.C.
 
             2. Se agregan componentes principales como segundo nivel:
 
-                - Red LAN segmentada
+                1.1 Protección de red
 
-                - Sistema de almacenamiento centralizado (NAS)
+                1.2 Seguridad informática institucional
 
-                - Capacitación y documentación técnica
+                1.3 Infraestructura técnica
 
             3. Cada componente se descompone en entregables como tercer nivel:
 
-                - Diseño de red y direccionamiento IP
+                1.1.1	Segmentación VLAN
 
-                - Implementación de VLANs y reglas de firewall
+                1.1.2	Auditorías manuales de red
 
-                - Instalación del servidor NAS
+                1.1.3	Seguridad Wi-Fi y contraseñas seguras
 
-                - Creación de carpetas por área y usuarios
+                1.1.4	Registro de actividad y logs
 
-                - Capacitación al personal administrativo
+                1.2.1	Consultoría en políticas de seguridad
 
-                - Manuales de uso, backups y control de accesos
+                1.2.2	Capacitación y difusión interna
+
+                1.2.3	Protocolo ante incidentes informáticos
+
+                1.2.4	Promoción de la cultura de ciberseguridad
+
+                1.3.1	Evaluación y reemplazo de hardware obsoleto
+
+                1.3.2	Inventario y control de activos digitales
+                
+                1.3.3	Configuración de NAS
+
+                1.3.4	Respaldo automático y recuperación de datos
+
+            4. Se codifica cada componente con numeración jerárquica, manteniendo coherencia entre niveles
+
+            5. Se planifica la elaboración del diccionario EDT, como documento que acompañará y explicará cada componente definido, donde cada uno de ello tendrá:
+               Código, nombre, descripción, entregable asociado, y responsable designado.
 
 ### Plan de Gestión de Requisitos
 
-#### 1. Propósito del Plan
+    En el presente plan detallamos la metodología, fuentes de información, técnicas y el proceso sistemático mediante el cual se identificarán, clasificarán, documentarán y validarán los requisitos del sistema de red LAN segura con almacenamiento NAS, considerando la realidad organizativa y operativa de F & R Corp S.A.C.
 
-Establecer el proceso sistemático para identificar, documentar, analizar, validar y gestionar los requisitos del sistema de red LAN segura y servidor NAS, asegurando que reflejen las necesidades de F & R Corp S.A.C. y que los entregables del proyecto los cumplan plenamente.
+    <img
+    	src='/images/Plan Req.png'
+    	alt='Plan Requisitos'
+    	justify='center'
+    	width='80%'
+    	style={{ borderRadius: '8px', justify: 'center' }}
+    	/>
 
----
+    📌 Alineación estratégica
+        Los requisitos fueron estructurados con base en:
 
-#### 2. Recolección de Requisitos
+        - El Árbol de Objetivos y los medios directos seleccionados del proyecto alternativo 2.
 
-##### Métodos Utilizados:
+        - La EDT aprobada en reunión del 28 de mayo con la gerencia.
 
-- **Cuestionarios y entrevistas** a stakeholders clave (Gerente General, Jefa de Oficina Técnica, Técnico de Redes).
-- **Buyer persona** y **mapas de empatía** para comprender necesidades desde la perspectiva de los usuarios.
-- **Tormenta de ideas** con el equipo de UNTELS y principales interesados.
-- **Análisis del árbol de problemas y objetivos**, alineado con la propuesta de valor.
+        - Los componentes clave del proyecto: seguridad de red, almacenamiento, cultura digital y capacitación.
+    
+    🧩 Fuentes de recolección utilizadas
 
----
+        ✔ Formularios aplicados a los 10 stakeholders
 
-#### 3. Roles y Responsabilidades
+        ✔ Cuestionario al dueño de la empresa
 
-| Rol                     | Responsabilidad                                          |
-| ----------------------- | -------------------------------------------------------- |
-| Product Owner (UNTELS)  | Coordinar la gestión de requisitos con los stakeholders. |
-| Stakeholders            | Brindar necesidades, validar requisitos y criterios.     |
-| Equipo Técnico (UNTELS) | Convertir requisitos funcionales en especificaciones.    |
-| Gerente General (F&R)   | Aprobación final de requisitos priorizados.              |
+        ✔  Árbol de problemas y objetivos documentado
 
----
+        ✔ Propuesta de valor y buyer persona técnico
 
-#### 4. Criterios de Aceptación
+        ✔ Estudios comparativos con otras MYPEs nacionales
 
-Los requisitos se considerarán aceptados cuando:
+        ✔ Observación de infraestructura y condiciones reales (uso de USBs, red Wi-Fi abierta)
 
-- Estén alineados con los objetivos del proyecto.
-- Sean validados por los usuarios clave mediante pruebas funcionales.
-- Cumplan los indicadores de éxito (e.g., respaldo de datos, reducción de incidentes, mejora en colaboración interna).
-- Se registren en un documento firmado digitalmente o aprobado por correo formal.
+## RECOPILAR REQUISITOS
 
----
+## 📥 ENTRADAS
 
-#### 5. Formato de Documentación
+### Plan para la dirección del proyecto
 
-Los requisitos se documentan en:
+    ✓ Plan de Involucramiento de los Interesados
 
-- **Plantilla estándar** de la empresa (tipo tabla o ficha de requerimientos).
-- Clasificación como **funcionales**, **no funcionales** y **técnicos**.
-- Almacenamiento compartido en **Google Drive** para acceso del equipo.
-- Uso de **Microsoft Project y Trello** para tareas derivadas de los requisitos.
+    #### 🔶 Requisitos de comunicación
 
----
+     Los requisitos de comunicación son fundamentales para asegurar que la información fluya correctamente entre todos los interesados del proyecto, en especial durante el proceso de recopilación de requisitos, donde se necesita captar percepciones, validar necesidades y estructurar respuestas técnicas claras.
 
-#### 6. Trazabilidad de Requisitos
+        - El Plan para la Dirección del Proyecto y el Plan de Involucramiento de los Interesados consideran la comunicación como una entrada clave en este proceso.
 
-Se utilizará una **Matriz de Trazabilidad**, enlazando:
+        - Se define quién necesita qué tipo de información, con qué frecuencia y mediante qué medio.
+    
+     📬 Comunicación según el registro de interesados
 
-- Código de requisito (R-001, R-002…)
-- Fuente (entrevista, mapa de empatía, árbol de objetivos…)
-- Entregable asociado (NAS, VLAN, capacitación…)
-- Estado (pendiente, en desarrollo, validado)
+     <img
+    	src='/images/Comu Reg.png'
+    	alt='Comunicación Registrados'
+    	justify='center'
+    	width='80%'
+    	style={{ borderRadius: '8px', justify: 'center' }}
+    	/>
 
----
+    #### 📘 Nivel de compromiso
+      
+      El nivel de compromiso hace referencia al grado en que los interesados apoyan y participan activamente en el desarrollo del proyecto. Se determina a partir de su influencia, interés, actitud y aportes directos durante los procesos como la recolección de requisitos.
 
-#### 7. Gestión de Cambios de Requisitos
+      De acuerdo con la matriz de poder-interés, los mapas de empatía y las entrevistas realizadas, se presenta la siguiente clasificación:
 
-- Las solicitudes de cambio serán presentadas por correo o formulario específico.
-- Evaluación de impacto técnico y económico a cargo del Product Owner y equipo técnico.
-- Aprobación de cambios por el **Gerente General** o equipo directivo.
-- Cambios aprobados se documentarán y se actualizarán cronogramas y entregables si es necesario.
+      🔶 Tabla: Compromiso de los principales interesados
 
----
+      <img
+    	src='/images/Nivel Compromiso.png'
+    	alt='Nivel de compromiso'
+    	justify='center'
+    	width='80%'
+    	style={{ borderRadius: '8px', justify: 'center' }}
+    	/>
 
-#### 8. Herramientas y Recursos de Apoyo
+### Documentos del proyecto
 
-- **Trello / Microsoft Project**: seguimiento de avances.
-- **Google Forms**: encuestas internas.
-- **Google Meet**: sesiones de validación de requisitos.
-- **Documentos compartidos (Google Docs / Sheets)**: centralización de información.
+    ✓ Registro de interesados
 
----
+    <img
+    src='/images/Registro de interesados.png'
+    alt='Cubo'
+    justify='center'
+    width='100%'
+    style={{ borderRadius: '8px', justify: 'center' }}
+    />
 
-#### 9. Mecanismos de Validación y Verificación
+### Factores ambientales de la empresa
 
-- Revisión de requisitos por parte del equipo técnico y stakeholders.
-- Validaciones prácticas con usuarios (fase de pruebas).
-- Reuniones quincenales de verificación de cumplimiento de requerimientos.
-- Bitácora de observaciones y validaciones para trazabilidad.
+La lista de factores ambientales tanto internos como externos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/15vUWbdCM1mJMt8JSmLjZT_RLRFgKqbWe/view" target="_blank">Factores ambientales de la empresa</a>
+
+### Activos de los procesos de la organización
+
+La lista de activos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/1uGd_aUVY_iSnknYrl4brtoyaz6TV9o6x/view" target="_blank">Activos de la organización</a>
+
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
+
+### Recopilación de datos
+
+    ✓ Cuestionarios y encuestas
+
+    #### Entrevista realizada al dueño:
+
+    Esta encuesta fue con el propósito de recolectar información sobre los factores ambientales de la empresa y los activos de los procesos de la organización.
+    	<a href="https://drive.google.com/file/d/1IdJRWNRmxXegvF1nO0WUPXw4oB9C3jw8/view">Cuestionario al dueño</a>
+
+    #### Entrevista realizada a los stakeholders:
+
+    Aquí se recolectaron las percepciones y requerimientos de los interesados en el proyecto.
+    	<a href="https://drive.google.com/file/d/1nv0yOLq6xxuC1EyFyMjDcVEfgsQqtFFy/view">Tabla de percepciones recolectadas</a>
+
+    ✓ Estudios comparativos
+
+    Las comparaciones se basan en investigaciones de campo, entrevistas a profesionales técnicos y análisis de referencias documentadas de empresas constructoras, estudios de arquitectura y negocios similares que operan como micro o pequeñas empresas en Perú y otros países de Latinoamérica. Al igual que F & R Corp S.A.C., estas empresas centralizan sus operaciones en una sola oficina y enfrentan desafíos comunes en el manejo seguro de su información técnica y administrativa.
+
+    #### Imprearq Perú SAC (Arequipa)
+
+    Giro: Servicios técnicos de arquitectura, diseño y supervisión de obras
+
+    Condición: PYME con 10 empleados técnicos y una oficina principal
+
+    Observaciones:
+
+    - Utiliza un NAS básico (QNAP) para almacenar planos y expedientes técnicos.
+
+    - Cuenta con red LAN segmentada entre oficina técnica y administración.
+
+    - Realiza backups diarios y aplica medidas mínimas de ciberseguridad.
+
+    Justificación: Buen ejemplo de digitalización segura en el sector construcción-arquitectura.
+
+    #### TecnoCAD Ecuador
+
+    Giro: Servicios de planos, impresión técnica y digitalización de proyectos civiles
+
+    Condición: Microempresa con operaciones centralizadas
+
+    Observaciones:
+
+    - Implementó red local con segmentos VLAN por área.
+
+    - Incorpora firewall básico, backup y antivirus en NAS.
+
+    - Manuales de políticas mínimas para uso de red e información.
+
+    #### Proyectos y Edificaciones del Norte (Chiclayo)
+
+    Giro: Empresa familiar en supervisión y obra civil privada
+
+    Condición: 12 empleados administrativos y técnicos
+
+    Observaciones:
+
+    - Sufrieron pérdida de datos en 2022 (formato USB).
+
+    - Desde 2023 usan OpenMediaVault con carpetas segmentadas.
+
+    - Capacitan internamente al personal sobre contraseñas y respaldos.
+
+    📚 Estudios y reportes de apoyo:
+
+    - ESET Latinoamérica – Reporte Tendencias 2025 (Ed. PYMEs)
+
+    Confirma que la mayoría de empresas pequeñas subestima la ciberseguridad y no invierte en segmentación ni respaldo automatizado.
+
+    <a href="https://www.eset.com/ve/tendencias-en-ciberseguridad/">Reporte detallado</a>
+
+    - OSILAC–CEPAL (Transformación digital de microempresas en servicios)
+
+    Resalta la necesidad urgente de infraestructura tecnológica básica (como NAS, redes LAN y capacitaciones) en empresas familiares técnicas.
+
+    <a href="https://www.cepal.org/es/publicaciones/47183-transformacion-digital-mipymes-elementos-diseno-politicas">Reporte detallado</a>
+
+    La siguiente comparación se construye tomando como base el análisis de las páginas oficiales, referencias académicas y entrevistas informales relacionadas con tres empresas reales del sector construcción, arquitectura y servicios técnicos en Perú y Ecuador. Asimismo, se consideraron informes técnicos de fuentes como ESET Latinoamérica y CEPAL-OSILAC, los cuales analizan la situación de la ciberseguridad y la transformación digital en micro y pequeñas empresas de la región. Las afirmaciones específicas sobre prácticas como la ausencia de segmentación en redes LAN, el uso de dispositivos USB para almacenamiento, la falta de políticas internas de seguridad o el registro manual de activos, fueron inferidas a partir del tipo de organización, sus recursos tecnológicos disponibles y el nivel de formalización observado en su perfil institucional público o validado en entrevistas académicas.
+
+    #### Componente 1: Instalación de red LAN segura y segmentada
+
+        <img
+    src='/images/Comparacion 1.png'
+    alt='Cubo'
+    justify='center'
+    width='100%'
+    style={{ borderRadius: '8px', justify: 'center' }}
+    />
+
+    #### Componente 2: Implementación de servidor NAS con respaldo automático
+
+        <img
+    src='/images/Comparacion 2.png'
+    alt='Cubo'
+    justify='center'
+    width='100%'
+    style={{ borderRadius: '8px', justify: 'center' }}
+    />
+
+    #### Componente 3: Capacitación en seguridad y gestión digital al personal
+
+        <img
+    src='/images/Comparacion 3.png'
+    alt='Cubo'
+    justify='center'
+    width='100%'
+    style={{ borderRadius: '8px', justify: 'center' }}
+    />
+
+## 📤 SALIDAS
+
+    #### Documentación de requisitos
+
+    Para realizar la documentación de requerimientos, agruparlos de manera correcta y abarcar cada uno de ellos de manera integral, se realizo una documentación que se puede visualizar en el siguiente enlace:
+
+    <a href="https://drive.google.com/file/d/1JaklWzqbjWx4hZrTkf1SKBMyAxJ-AQWP/view">Requisitos documentados</a>
+
+    #### Matriz de trazabilidad
+
+    Ya teniendo los requisitos documentados nos serviremos de estos para realizar la matriz de trazabilidad, añadiendole la numeración que tendrá en el EDT, esto obviamente en forma de entregable, el responsable y su prioridad, todo esto se puede visualizar en el siguiente enlace:
+
+    <a href="https://drive.google.com/file/d/1lWBL3_bDSZRRMBvH5iwmdVEl1_H_uWHA/view">Matriz de trazabilidad</a>
+
+## DEFINIR EL ALCANCE
+
+## 📥 ENTRADAS
+
+### Plan de gestión de alcance
+
+    ✓ Cómo Definir el Alcance
+
+    Se puede ver en la siguiente documentación.
+
+    <a href="https://drive.google.com/file/d/1pZp6qYDwdeI6Pe699Jn4O-Do4gGVbvhi/view">Plan de gestión de alcance</a>
+
+    ✓ Cómo Crear EDT
+
+    Se puede ver en la siguiente documentación.
+
+    <a href="https://drive.google.com/file/d/1pZp6qYDwdeI6Pe699Jn4O-Do4gGVbvhi/view">Plan de gestión de alcance</a>
+
+### Documentos del proyecto
+
+    ✓ Documentación de requisitos
+
+    Los requisitos en un formato ordenado, de manera tabular y ordenados por tipos se pueden ver en esta documentación.
+
+    <a href="https://drive.google.com/file/d/1JaklWzqbjWx4hZrTkf1SKBMyAxJ-AQWP/view">Requisitos documentados</a>
+
+    ✓ Registro de Riesgos
+
+    El registro de riesgos se encarga de listar y tabular estos dependiendo de cada tipo, a la vez que estrategias de respuesta
+
+    <a href="https://drive.google.com/file/d/1DsaKQkwS0Nyl5u5BmUaRKDU2mJWooOX4/view">Registro de riesgos</a>
+
+### Factores ambientales de la empresa
+
+La lista de factores ambientales tanto internos como externos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/15vUWbdCM1mJMt8JSmLjZT_RLRFgKqbWe/view" target="_blank">Factores ambientales de la empresa</a>
+
+### Activos de los procesos de la organización
+
+La lista de activos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/1uGd_aUVY_iSnknYrl4brtoyaz6TV9o6x/view" target="_blank">Activos de la organización</a>
+
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
+
+## 📤 SALIDAS
+
+
