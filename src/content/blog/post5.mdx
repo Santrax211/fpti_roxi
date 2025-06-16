@@ -1,117 +1,139 @@
 ---
-title: 'Recopilación, Análisis y Representación de datos'
-description: 'Se detalla las herramientas utilizadas para el desarrollo del proyecto'
-pubDate: 2025-04-18T16:00:00.000Z
-heroImage: '../../assets/images/post5.jpg'
+title: 'GESTIÓN DEL CRONOGRAMA DEL PROYECTO'
+description: 'Resultado del análisis de alternativas'
+pubDate: 2025-05-26T17:00:00.000Z
+heroImage: '../../assets/images/Cronograma.jpg'
 category: 'Documentación'
-tags: ['Herramienta']
+tags: ['Salida']
 ---
 
-# Recopilación, Análisis y Representación de datos
+## PLANIFICAR LA GESTIÓN DEL CRONOGRAMA
 
-## 1. Recopilación de datos
+## 📥 ENTRADAS
 
-### 1.1 Tormenta de ideas
+### Plan para la dirección del proyecto
 
-La tormenta de ideas se realizará con el equipo de proyecto y principales interesados para:
+    ✓ Plan para la gestión del alcance
 
-- Identificar riesgos y oportunidades en la implementación de la infraestructura de red y almacenamiento.
-- Generar soluciones creativas para posibles obstáculos técnicos o logísticos.
-- Definir expectativas y prioridades de los usuarios finales respecto a la conectividad, almacenamiento y rendimiento.
+    El detallado, puntos clave sobre el EDT, y el alcance se detallan en el documento
+    <a href="https://drive.google.com/file/d/1pZp6qYDwdeI6Pe699Jn4O-Do4gGVbvhi/view">Plan de gestión de alcance</a>
 
-Se programarán sesiones estructuradas donde todos los participantes podrán aportar ideas libremente. Posteriormente, las ideas serán clasificadas, evaluadas y priorizadas según su viabilidad e impacto.
+    ✓ Enfoque de desarrollo
 
-### Principales ideas generadas:
+        <img
+    	src='/images/Enfoque de desarrollo.png'
+    	alt='Enfoque desarrollo'
+    	justify='center'
+    	width='80%'
+    	style={{ borderRadius: '8px', justify: 'center' }}
+    	/>
 
-- **Requerimientos técnicos mínimos** para las computadoras (tarjetas de red gigabit, almacenamiento SSD, mínimo 8GB RAM).
-- **Topología de red sugerida:** Red de estrella con un switch centralizado.
-- **Elección de un switch administrable** para permitir el monitoreo y control de la red.
-- **Cableado estructurado** con cables categoría 6 para asegurar velocidades adecuadas.
-- **Implementación de un servidor NAS** (almacenamiento conectado a la red) para la centralización de archivos compartidos.
-- **Segmentación de la red** en VLANs para mejorar la seguridad entre áreas administrativas y técnicas.
-- **Uso de UPS** para asegurar continuidad de la red ante cortes eléctricos.
-- **Implementación de políticas de respaldo automático** diario para proteger los datos críticos.
-- **Capacitación a usuarios** sobre el uso adecuado de la red y almacenamiento compartido.
+### Factores ambientales de la empresa
 
-<img
-	src='/images/tormenta-ideas.jpg'
-	alt='Ilustración de tormenta de ideas'
-	width='100%'
-	style={{ borderRadius: '8px' }}
-/>
+La lista de factores ambientales tanto internos como externos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/15vUWbdCM1mJMt8JSmLjZT_RLRFgKqbWe/view" target="_blank">Factores ambientales de la empresa</a>
 
-## 2. Análisis de datos
+### Activos de los procesos de la organización
 
-### 2.1 Análisis de Interesados
+La lista de activos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/1uGd_aUVY_iSnknYrl4brtoyaz6TV9o6x/view" target="_blank">Activos de la organización</a>
 
-El análisis de interesados tiene como objetivo identificar y comprender:
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
 
-- El nivel de interés que cada stakeholder tiene en el proyecto.
-- El grado de influencia que cada stakeholder puede ejercer sobre las decisiones y resultados del proyecto.
-- Las expectativas y necesidades de los interesados clave.
-- Las posibles estrategias de comunicación y gestión adecuadas para cada interesado.
+### Análisis de datos
 
-Para ello, se evaluará a cada stakeholder basándose en los siguientes criterios:
+    ✓ Metodología de Programación
 
-- **Poder:** Capacidad de influir en el proyecto.
-- **Interés:** Nivel de atención o preocupación que muestra hacia el proyecto.
-- **Actitud:** Positiva, neutral o negativa respecto al proyecto.
-- **Necesidades:** Requerimientos o preocupaciones específicas.
+    - Aplicación al proyecto: Se adoptará una metodología híbrida, aprovechando lo mejor de dos enfoques:
 
-### 📋 Análisis de Interesados
+        - Predictiva (estructurada): Aplicada para la planificación inicial del proyecto, como el diseño del cronograma, la EDT, la estimación de tiempos y la documentación técnica. Esto permite un control riguroso sobre los entregables y su secuencia.
 
-<img
-	src='/images/interesados 1.jpeg'
-	alt='Ilustración de tormenta de ideas'
-	width='100%'
-	style={{ borderRadius: '8px' }}
-/>
+        - Adaptativa (ágil): Se usará para fases que implican validación práctica, instalación del servidor NAS, configuración de red o pruebas funcionales, ya que pueden surgir ajustes técnicos no previstos y es necesario reaccionar con flexibilidad.
 
-<img
-	src='/images/interesados 2.jpeg'
-	alt='Ilustración de tormenta de ideas'
-	width='100%'
-	style={{ borderRadius: '8px' }}
-/>
+    ✓ Herramientas y técnicas de programación
 
-<img
-	src='/images/interesados 3.jpeg'
-	alt='Ilustración de tormenta de ideas'
-	width='100%'
-	style={{ borderRadius: '8px' }}
-/>
+    - Herramientas:
 
-## 3. Representación de datos
+            - ProjectLibre: Principal herramienta para elaborar el cronograma con actividades, fechas, responsables y dependencias
 
-### 3.1 Mapeo de interesados
+            - JIRA: Para gestionar tareas ágiles en la instalación del servidor NAS y pruebas funcionales.
 
-El mapeo de interesados permitirá representar gráficamente a los stakeholders en una **Matriz de Poder/Interés**, clasificándolos en cuatro categorías:
+            - Draw.io: Para construir el diagrama de la EDT jerarquizada y visualizar dependencias.
 
-- **Alta influencia / Alto interés:** Gestión cercana y activa.
-- **Alta influencia / Bajo interés:** Mantener satisfechos.
-- **Baja influencia / Alto interés:** Mantener informados.
-- **Baja influencia / Bajo interés:** Monitorear con esfuerzo mínimo.
+            - Gantt (en ProjectLibre): Para representar la duración total del proyecto, rutas críticas y superposición de tareas
 
-Esta matriz facilitará la definición de estrategias específicas de comunicación, participación y control para cada grupo de interesados, asegurando que el proyecto avance con el apoyo necesario.
+    ✓ Enfoques de Estimación
 
-| Grupo                               | Interesados               | Estrategia de Gestión                                                             |
-| ----------------------------------- | ------------------------- | --------------------------------------------------------------------------------- |
-| **Alta Influencia / Alto Interés**  | Gerente General           | Gestionar de cerca. Mantener involucrado y bien informado.                        |
-| **Alta Influencia / Medio Interés** | Área de Contabilidad      | Satisfacer necesidades. Comunicación regular sobre costos y avances.              |
-| **Media Influencia / Alto Interés** | Área de Ingeniería        | Mantener informado. Asegurar acceso a avances y resolver requerimientos técnicos. |
-| **Media Influencia / Bajo Interés** | Proveedor de Equipamiento | Mantener monitoreado. Contacto puntual para especificaciones técnicas.            |
-| **Baja Influencia / Medio Interés** | Personal Administrativo   | Mantener informado de manera general. Comunicación periódica.                     |
+    - Técnicas combinadas aplicadas en el proyecto:
 
-<img
-	src='/images/matriz-interes.jpg'
-	alt='Ilustración de tormenta de ideas'
-	width='100%'
-	style={{ borderRadius: '8px' }}
-/>
+        - Estimación de tres valores (PERT): Se aplicará a tareas técnicas con incertidumbre como instalación del sistema NAS, ejecución de escaneos o automatización de backups.
 
-### 🎯 Notas
+            - Tiempo optimista (To), tiempo más probable (Tm), tiempo pesimista (Tp)
 
-- **Gerente General** y **Área de Contabilidad** son críticos para el éxito (por decisión y financiamiento).
-- **Área de Ingeniería** debe tener buena comunicación para evitar problemas técnicos o resistencia al cambio.
-- **Proveedor** necesita instrucciones técnicas claras, pero no involucrarlo en decisiones estratégicas.
-- **Personal Administrativo** debe ser informado para mantener el apoyo organizacional general.
+            - Fórmula: T = (To + 4Tm + Tp)/6
+
+        - Estimación ascendente: Se empleará para tareas pequeñas desglosadas en la EDT. Se sumarán sus duraciones para determinar la duración total del componente principal.
+
+    ✓ Formatos
+
+    - Se implementarán los siguientes formatos internos:
+
+        - Plantilla de EDT: Con columnas de código, nombre, entregable, responsable.
+
+        - Plantilla de cronograma: Especificará tareas, fechas estimadas de inicio/fin, responsables.
+
+        - Formato de control de avance: Documento semanal que muestre el estado de las tareas por sprint.
+
+        - Checklist de entregables: Validación de cada entregable con responsable, fecha de entrega y observaciones.
+
+    ✓ Software de Gestión de Proyectos
+
+    - Herramientas planificadas:
+
+        - ProjectLibre: Software principal para generar el cronograma general, asignar duraciones, relaciones de dependencia y generar el diagrama de Gantt.
+
+        - JIRA: Para el control de tareas y seguimiento ágil, especialmente útil en etapas de pruebas, correcciones o configuración técnica.
+
+        - Draw.io: Para la visualización de la EDT como estructura jerárquica editable.
+
+        - Opcional: MS Project podría usarse si se aprueba un presupuesto adicional para herramientas premium.
+
+## 📤 SALIDAS
+
+### Plan de gestión del cronograma
+
+El plan de gestión del cronograma comprende varios puntos importantes, tales como el modelo de programación, su nivel de exactitud, umbrales de control, etc. Estos puntos son la base para los procesos siguientes y la realización de un cronograma en condiciones; todos estos puntos se detallan de manera formal en el siguiente documento.
+
+<a href="https://drive.google.com/file/d/1cBWgtLMcXhGL5vrezXERlZGeuwFhZeYf/view" target="_blank">Plan de gestión de cronograma</a>
+
+## DEFINIR LAS ACTIVIDADES
+
+## 📥 ENTRADAS
+
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
+
+## 📤 SALIDAS
+
+## SECUENCIAR LAS ACTIVIDADES
+
+## 📥 ENTRADAS
+
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
+
+## 📤 SALIDAS
+
+## ESTIMAR LA DURACIÓN DE LAS ACTIVIDADES
+
+## 📥 ENTRADAS
+
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
+
+## 📤 SALIDAS
+
+## DESARROLLAR EL CRONOGRAMA
+
+## 📥 ENTRADAS
+
+## 🛠️ HERRAMIENTAS Y TÉCNICAS
+
+## 📤 SALIDAS
