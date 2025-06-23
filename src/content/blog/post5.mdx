@@ -372,6 +372,145 @@ La estimación ascendente es la técnica más detallada y precisa, ya que constr
 
 ## 📥 ENTRADAS
 
+### Plan para la dirección del proyecto
+
+    ✓ Plan de gestión del cronograma
+
+        El detallado de este plan, los puntos clave y su visualización estan en el documento
+
+        <a href="https://drive.google.com/file/d/1cBWgtLMcXhGL5vrezXERlZGeuwFhZeYf/view" target="_blank">Plan de gestión de cronograma</a>
+
+    ✓ Linea base del alcance
+
+        La línea base del alcance consta de tres documentos, estos son el Enunciado del alcance del proyecto, la Estructura de Desglose de Trabajo (EDT) y el Diccionario EDT; esta colección de documentos dictaminarán el alcance base del proyecto.
+
+        El enunciado del proyecto se puede visualizar en el archivo
+
+        <a href="https://drive.google.com/file/d/1iwjDjoGmTvuCCNrSC_QRPeIkCMyBap6u/view" target="_blank">Enunciado del proyecto</a>
+
+        La Estructura de Desglose de Trabajo (EDT) y el Diccionario EDT se visualizan en el siguiente enlaces
+
+        <a href="https://drive.google.com/file/d/1aPkGoeeAHwLKjXsvxZzVn0aUm8PEUFmR/view" target="_blank">Descomposición EDT</a>
+
+        <a href="https://drive.google.com/file/d/14mKaxbr2H3OXNAOrJ5_-WHkae9PgSEN6/view" target="_blank">Diccionario EDT</a>
+
+### Documentos del proyecto
+
+    ✓ Diagrama de red del cronograma del proyecto
+
+        El diagrama de red del cronograma mostrará la sucesión de actividades a lo largo del proyecto de manera gráfica, mostrando la precedencia y si hay adelantes o retrasos; todo esto se puede evidenciar en la siguiente documentación.
+
+        <a href="https://www.canva.com/design/DAGqmH3twbc/QIyF3cYYT0lrWQ-TCqAaPQ/edit">Diagrama de red</a>
+
+    ✓ Atributos de las actividades
+
+        Aquí se veran relaciones entre las actividades que pueden ser predecesoras o sucesoras, a la vez que su tipo y más detalles; la lista de estos junto a su actividad correspondiente se puede ver en el documento <a href="https://drive.google.com/file/d/1T1WTn_9nSsb6sguiKDLxvFXUOyGNIjGy/view" target="_blank">Atributos de las actividades</a>
+
+    ✓ Estimación de la duración
+
+        Estas son las duraciones esperadas (E) que hemos calculado para cada una de las 56 actividades de nuestro proyecto para la empresa F&R Corp, utilizando principalmente la Estimación por Tres Valores; estas representan el tiempo más probable que cada tarea requerirá para completarse, considerando las incertidumbres inherentes a los proyectos de TI.
+
+        <a href="https://drive.google.com/file/d/1-IHC-0MFXYzp4FbG5a9Vrpyl-5sWQC91/view" target="_blank">Estimación de la duración</a>
+
+### Factores ambientales de la empresa
+
+    La lista de factores ambientales tanto internos como externos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/15vUWbdCM1mJMt8JSmLjZT_RLRFgKqbWe/view" target="_blank">Factores ambientales de la empresa</a>
+
+### Activos de los procesos de la organización
+
+    La lista de activos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
+    <a href="https://drive.google.com/file/d/1uGd_aUVY_iSnknYrl4brtoyaz6TV9o6x/view" target="_blank">Activos de la organización</a>
+
 ## 🛠️ HERRAMIENTAS Y TÉCNICAS
 
+### Método de la ruta crítica
+
+    La ruta crítica o CPM recorrerá las actividades del proyecto que determinan la duración mínima del proyecto, es decir aquellas que no tienen holgura; las que si se retrasan, retrasarian automáticamente la fecha de finalización del proyecto.
+
+    Para la realización de este cálculo es tener la duración de las actividades en días, esto porque al usar ProjectLibre nos comprometemos a usar la unidad de medida días, lo poderoso de este software, es que al nosotros terminar de introducir los datos de las actividades y sus dependencias, este nos brindará la ruta crítica resaltada en color rojizo, con las actividades cruciales en este y en la parte de arriba se podrán visualizar las fechas de inicio y término.
+
+        <img
+        src='/images/Ruta critica.png'
+        alt='Ruta critica'
+        justify='center'
+        width='100%'
+        style={{ borderRadius: '8px', justify: 'center' }}
+        />
+
+        <img
+        src='/images/No critica.png'
+        alt='No critica'
+        justify='center'
+        width='100%'
+        style={{ borderRadius: '8px', justify: 'center' }}
+        />
+    
+    Como vemos, la ruta crítica que nos brinda es la que más se extiende en el proyecto.
+    Ahora para estar más seguros, se hará una comparativa con las ruta no crítica y la que sí en días de duración y fechas de terminado para ver si esto se está cumpliendo correctamente.
+
+        <img
+        src='/images/Comparativa de actividades.png'
+        alt='Comparativa de actividades'
+        justify='center'
+        width='100%'
+        style={{ borderRadius: '8px', justify: 'center' }}
+        />
+
+### Optimización de recursos
+
+    Ya realizado el primer método, nos corresponde realizar la optimización de recursos, esta busca equilibrar la disponibilidad de recursos con las fechas del cronograma, obviamente si afectar los objetivos del proyecto; en este caso ya que el equipo es de cinco personas, se tomarán 5 recursos de tipo trabajo (personas) para asignarles cada recurso a su tarea correspondiente, esta asignación y recursos están basados en los atributos de las actividades, salida de procesos anteriores.
+    Los recursos son los que se ven en la siguiente imagen:
+
+        <img
+        src='/images/Recursos.png'
+        alt='Recursos'
+        justify='center'
+        width='100%'
+        style={{ borderRadius: '8px', justify: 'center' }}
+        />
+
+    Como vemos cada recurso tiene sus siglas de abreviación y el porcentaje de Unidades Max que define cuantas horas trabajarán cada parte; esto ya se definió en el documento de disponibilidad.
+    El siguiente paso es asignar estos recursos a las actividades ya ingresadas en el ProjectLibre, esto será en la columna Nombres del Recurso:
+
+        <img
+        src='/images/Actividades y recursos.png'
+        alt='Actividades y recursos'
+        justify='center'
+        width='100%'
+        style={{ borderRadius: '8px', justify: 'center' }}
+        />
+
+    Por último ya habiendo asignado todos los recursos a sus respectivas actividades, volveremos a la pestaña de recursos, pero seleccionaremos Uso de recursos, lo que se verá en la siguiente imagen es lo que tendremos en este apartado:
+
+        <img
+        src='/images/Uso de recursos.png'
+        alt='Uso de recursos'
+        justify='center'
+        width='100%'
+        style={{ borderRadius: '8px', justify: 'center' }}
+        />
+
+    A la izquierda tendremos los recursos y actividades a las que están asignados, todas con su carga total en horas; luego a la derecha una grilla por días con cuántas horas están asignadas a cada recurso por jornada.
+Para usar la técnica de optimización de recursos tendriamos que tener sobreasignaciones o conflictos de carga, esto se evidencia con resaltados en rojo en ProjectLibre; pero como vemos:
+
+-   Cada recurso trabaja dentro de su capacidad diaria
+-   No existen conflictos de asignación ni solapamientos
+-   No fue necesario aplicar técnicas de nivelación ni alisado de recursos, ya que el cronograma actual ya refleja una distribución eficiente
+
+Por ende se concluye que la optimización de recursos se dió de manera natural al asignar correctamente a los recursos en cada actividad que tenemos.    
+
 ## 📤 SALIDAS
+
+### Línea base del cronograma
+
+    La línea base del cronograma fue registrada a través del diagrama de red generado en ProjectLibre, este se puede seleccionar en en el grupo Task views e ir al gráfico de red, el cual contiene las fechas planificadas de inicio y término de cada actividad, así como sus duraciones correspondientes.
+
+    <a href="https://drive.google.com/file/d/1H-I6o7w1Z9F-qrMH6-73U5fAmaGLSr2i/view" target="_blank">Tiempo (Red - Cronograma)</a>
+
+### Cronograma del proyecto
+
+    El cronograma del proyecto final fue elaborado y representado mediante el diagrama de Gantt en ProjectLibre, este incluye todas las tareas planificadas, relaciones lógicas de precedencia, recursos asignados y la ruta crítica definida.
+    Esta vista permite gestionar el tiempo del proyecto, analizar el impacto de cambios y realizar el seguimiento diario.
+
+    <a href="https://drive.google.com/file/d/1ZJmrispkAHgI4WBv6DKr-LEotLAZbwmv/view" target="_blank">Cronograma del proyecto</a>
