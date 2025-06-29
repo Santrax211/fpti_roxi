@@ -132,11 +132,13 @@ tags: ['Salida']
 
 ### Plan para la dirección del proyecto
 
-    ✓ Plan de gestión del cronograma
+    ✓ Plan de gestión de los costos
 
-    El detallado de este plan, los puntos clave y su visualización estan en el documento
+    El plan de gestión de los costos es un componente del plan para la dirección del proyecto y describe la forma en que 
+    se planificarán, estructurarán y controlarán los costos del proyecto. Los procesos de gestión de los costos, así como sus 
+    herramientas y técnicas asociadas se veran en el siguiente documento.
 
-    <a href="https://drive.google.com/file/d/1cBWgtLMcXhGL5vrezXERlZGeuwFhZeYf/view" target="_blank">Plan de gestión de cronograma</a>
+    <a href="https://drive.google.com/file/d/1G9KdavJOdRO50mtREyoNhRo6ldP29BMP/view" target="_blank">Plan de gestión de los costos</a>
 
     ✓ Linea base del alcance
 
@@ -152,6 +154,15 @@ tags: ['Salida']
 
     <a href="https://drive.google.com/file/d/14mKaxbr2H3OXNAOrJ5_-WHkae9PgSEN6/view" target="_blank">Diccionario EDT</a>
 
+### Documentos del proyecto
+
+    ✓ Cronograma del proyecto
+
+    El cronograma del proyecto final fue elaborado y representado mediante el diagrama de Gantt en ProjectLibre, este incluye todas las tareas planificadas, relaciones lógicas de precedencia, recursos asignados y la ruta crítica definida.
+    Esta vista permite gestionar el tiempo del proyecto, analizar el impacto de cambios y realizar el seguimiento diario.
+
+    <a href="https://drive.google.com/file/d/1ZJmrispkAHgI4WBv6DKr-LEotLAZbwmv/view" target="_blank">Cronograma del proyecto</a>
+
 ### Factores ambientales de la empresa
 
 La lista de factores ambientales tanto internos como externos, su detallado más a fondo y la importancia en la organización se pueden ver aquí.
@@ -164,34 +175,95 @@ La lista de activos, su detallado más a fondo y la importancia en la organizaci
 
 ## 🛠️ HERRAMIENTAS Y TÉCNICAS
 
-### Descomposición
+### Estimación Análoga
 
-    La descomposición se basa en desglosar o dividir los paquetes de trabajo del EDT en actividades que serviran para completar su realización.
-    Partiremos del EDT realizado en procesos anteriores para ubicar paquetes y con ellos ya identificados, desglosarlos en sus respectivas actividades. El EDT referenciado se puede ver en <a href="https://drive.google.com/file/d/1aPkGoeeAHwLKjXsvxZzVn0aUm8PEUFmR/view" target="_blank">EDT</a>
+#### Empresa Referencial: GRAFIRED S.A.C
 
-    La descomposición en las actividades se puede visualizar en <a href="https://www.canva.com/design/DAGqj_Xfa6c/L1WUJKpmPowUblhwOSYC4Q/edit" target="_blank">DESGLOSE DE ACTIVIDADES</a>
+✔️ Justifiación de uso
 
+La estructura operativa, tecnológica y los objetivos de digitalización y seguridad son prácticamente equivalentes a los de F&R Corp S.A.C., lo que permite tomar los costos y la estructura del proyecto de GRAFIRED como un marco válido y realista para estimar los costos.
+
+Proyecto realizado: Implementación de red LAN segmentada y servidor NAS con respaldo automático.
+
+✔️ Características comunes con F&R Corp
+
+    - Oficina con 10 estaciones de trabajo.
+
+    - Operación en un solo local, similar a F&R Corp.
+
+    - Baja digitalización inicial, uso de almacenamiento en USBs, sin políticas formales de seguridad.
+
+✔️ Alcance del proyecto en GRAFIRED
+
+    - Instalación de red LAN con VLAN.
+
+    - Implementación de un servidor NAS OpenMediaVault.
+
+    - Capacitación al personal en seguridad digital.
+
+    - Elaboración de políticas internas.
+
+    - Soporte post implementación.
+
+✔️ Duración del proyecto: 60 días calendario (igual a F&R Corp).
+
+✔️ Costo total registrado: S/. 11,500.
+
+### Estimación Ascendente
+
+✔️ Fundamento
+
+    - Cálculo detallado desde las tareas más pequeñas de la EDT.
+
+    - Se asignan costos individuales a cada actividad según:
+
+        - Mano de obra (horas persona).
+
+        - Hardware (NAS, switches, routers).
+
+        - Materiales (manuales, documentos, configuraciones).
+
+✔️ Aplicación
+
+    - Alta precisión en actividades con esfuerzo predecible (configuración, instalación física, creación de políticas y bitácoras).
+
+### Estimación Por Tres Valores
+
+✔️ Fórmula
+
+    <img
+    src='/images/Formula estimacion.jpeg'
+    alt='Formula estimacion'
+    justify='center'
+    width='100%'
+    style={{ borderRadius: '8px', justify: 'center' }}
+    />
+
+Donde:
+
+    - Co = Costo Optimista.
+
+    - 𝐶𝑚 = Costo Más Probable (basado en datos de GRAFIRED y cotizaciones).
+
+    - 𝐶𝑝 = Costo Pesimista (considera riesgos, demoras o sobrecostos).
+
+✔️ Uso
+
+    - Aplicada especialmente en tareas con incertidumbre: configuración de red, instalación de NAS, pruebas funcionales y capacitación.
+​
 ## 📤 SALIDAS
 
-### Lista de actividades
+### Base de las estimaciones
 
-La lista de actividades se derivan directamente del EDT, los paquetes están descompuestos a nivel accionable para su ingreso futuro en JIRA como issues/subtareas; la lista completa de estas se puede visualizar en <a href="https://drive.google.com/file/d/1fsI8TLeCPtC2vfIDqSAr0J02m2Uaug11/view" target="_blank">Lista de actividades</a>
+La cantidad y el tipo de detalles adicionales que respaldan la estimación de costos varían en función del área de aplicación se puede ver en el siguiente documento.
 
-### Atributos de las actividades
+<a href="https://drive.google.com/file/d/1TRU-VTBi_30Ed0HmRnwtVprB_Ye-cLiK/view" target="_blank">Base de las estimaciones</a>
 
-Los atributos de las actividades nos dará un detalle más amplio de cada una, responsables, actividades predecesoras si se da el caso y sus tipos; todo esto se puede visualizar en la tabla <a href="https://drive.google.com/file/d/1T1WTn_9nSsb6sguiKDLxvFXUOyGNIjGy/view" target="_blank">Atributos de las actividades</a>
+### Estimaciones de costos
 
-### Lista de hitos
+Las estimaciones de costos se veran de manera detallada en el siguiente documento.
 
-La lista de hitos no es más que momentos de entrega que marcarán el progreso del proyecto en el cronograma.
-
-            <img
-            src='/images/Lista de hitos.png'
-            alt='Lista de hitos'
-            justify='center'
-            width='100%'
-            style={{ borderRadius: '8px', justify: 'center' }}
-            />
+<a href="https://drive.google.com/file/d/1DPC0N89PP_ApofslJwc4gotjXQqGXahI/view" target="_blank">Estimaciones de costos</a>
 
 ## DETERMINAR PRESUPUESTO
 
